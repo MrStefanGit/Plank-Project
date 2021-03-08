@@ -1,0 +1,26 @@
+.viewLink {
+    color: black;
+    text-decoration: none;
+}
+
+.viewLink:link {
+  color: black;
+  text-decoration: none;
+}
+
+.viewLink:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.viewLink:hover {
+    color: black;
+    text-decoration: none;
+    font-size:90%
+}
+
+.viewLink:active {
+    color: black;
+    text-decoration: none;
+    font-size:80%
+}

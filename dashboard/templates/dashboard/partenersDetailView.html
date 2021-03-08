@@ -1,0 +1,30 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Partnener Details</h1>
+            <a href="{% url 'parteners-update' id=data.id %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Update</a>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">{{ data.name }}</h6>
+            </div>
+            <div class="card-body">
+                <p><b>Registration number:</b> {{ data.registration_number }}</p>
+                <p><b>Country:</b> {{ data.country }}</p>
+                <p><b>County:</b> {{ data.county }}</p>
+                <p><b>City:</b> {{ data.city }}</p>
+                <p><b>Adress:</b> {{ data.address }}</p>
+                <p><b>Phone number:</b> {{ data.phone_number }}</p>
+                <p><b>Email:</b> {{ data.email }}</p>
+                <p><b>Contact Person:</b> {{ data.contact_person }}</p>
+                <p><b>Manager:</b> {{ data.manager }}</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

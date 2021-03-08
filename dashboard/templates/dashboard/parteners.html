@@ -1,0 +1,66 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Parteners</h1>
+            <a href="{% url 'add-partener' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Add Partener</a>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Registration Number</th>
+                                <th>Country</th>
+                                <th>County</th>
+                                <th>City</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Contact Person</th>
+                                <th>Manager</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Registration Number</th>
+                                <th>Country</th>
+                                <th>County</th>
+                                <th>City</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Contact Person</th>
+                                <th>Manager</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            {% for partener in parteners %}
+                                <tr>
+                                    <td><a class="viewLink" href="{% url 'parteners-detail' id=partener.id %}">{{ partener.name }}</td>
+                                    <td>{{ partener.registration_number }}</td>
+                                    <td>{{ partener.country }}</td>
+                                    <td>{{ partener.county }}</td>
+                                    <td>{{ partener.city }}</td>
+                                    <td>{{ partener.address }}</td>
+                                    <td>{{ partener.phone_number }}</td>
+                                    <td>{{ partener.email }}</td>
+                                    <td>{{ partener.contact_person }}</td>
+                                    <td>{{ partener.manager }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

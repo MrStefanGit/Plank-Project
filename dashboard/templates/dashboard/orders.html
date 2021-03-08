@@ -1,0 +1,45 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <!-- Page Heading -->
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Products</h1>
+            <a href="{% url 'add-product' %}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">Add Product</a>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Order</th>
+                                <th>Client</th>
+                                <th>Approved</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th>Meaurement Unit</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            {% for order in orders %}
+                                <tr>
+                                    <td><a class="viewLink" href="{% url 'orders-detail' id=order.id %}">Order {{ order.id }}</a></td>
+                                    <td>{{ order.client }}</td>
+                                    <td>{{ order.approved }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
